@@ -1,0 +1,142 @@
+/* Enable scrolling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow-y: auto; /* Allows scrolling */
+    height: auto;
+}
+
+/* Header Styling */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Add more spacing between the profile pic and products */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    margin-bottom: 30px; /* Added spacing below */
+}
+
+/* Product Container: Side-by-Side Layout */
+.product-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Prevents overly wide layouts */
+    gap: 15px; /* Adjusted spacing */
+}
+
+/* Product Box: Side-by-Side Display */
+.product-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 45%; /* Makes them side by side */
+    max-width: 280px; /* Prevents excessive width */
+    height: 350px; /* Keeps consistent height */
+    box-sizing: border-box;
+    margin-bottom: 0; /* Removed extra spacing at the bottom */
+}
+
+/* Ensure images scale properly */
+.product-box img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+/* Ensure button is below image */
+.product-box button {
+    padding: 10px 20px;
+    background-color: #0a84ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 0;
+}
+
+/* Position testimonials on the top-left */
+.pop-up-container {
+    position: fixed;
+    top: 10%;
+    left: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+/* Style individual testimonial pop-ups */
+.testimonial-popup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 200px;
+    text-align: left;
+}
+
+/* Ensure testimonial images fit */
+.testimonial-popup img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+/* Particle Background */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Responsive Fix: Stack products on smaller screens */
+@media (max-width: 600px) {
+    .product-container {
+        flex-direction: column;
+    }
+
+    .product-box {
+        width: 90%;
+    }
+}
